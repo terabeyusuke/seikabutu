@@ -77,4 +77,11 @@ class NewsController extends Controller
     $news->fill($news_form)->save();
     return redirect('admin/news');
   }
+
+  public function delete(Request $request)
+  {
+    $news = News::find($request->id);
+    $news->delete();
+    return redirect('admin/news/');
+  }
 }

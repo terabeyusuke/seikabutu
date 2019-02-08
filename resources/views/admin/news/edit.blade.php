@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title','ニュースの編集')
-
 @section('content')
   <div class="container">
      <div class="row">
@@ -14,6 +13,7 @@
                    @endforeach
                 </ul>
               @endif
+              
               <div class="form-group row">
                  <label class="col-md-2" for="title">タイトル</label>
                  <div class-"col-md-10">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-check">
                        <label class="form-check-label">
-                          <input type="checbox" class="form-check-input" name="remove" value="true">画像を削除
+                          <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
                        </label>
                    </div>
                 </div>
