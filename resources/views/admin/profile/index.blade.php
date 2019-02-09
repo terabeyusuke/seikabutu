@@ -22,7 +22,7 @@
   <div class="row">
      <div class="admin-profile col-md-12 mx-auto">
        <div class="row">
-        <div class="table table-dark">
+        <table class="table table-dark">
            <thead>
               <tr>
                  <th width="10%">ID</th>
@@ -52,8 +52,9 @@
                </tr>
               @endforeach
            </tbody>
-        </div>
-     </div>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 @endsection

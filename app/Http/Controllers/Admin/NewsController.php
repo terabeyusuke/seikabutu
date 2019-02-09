@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\News;
+use App\History;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -75,6 +77,14 @@ class NewsController extends Controller
     unset($news_form['_token']);
     unset($news_form['image']);
     $news->fill($news_form)->save();
+
+    $history = new History;
+    \Debugbar::info($history);
+    $history->news_id = $news->id;
+
+    $history->edited_at = Carbon::now();
+    $history->save();
+
     return redirect('admin/news');
   }
 
