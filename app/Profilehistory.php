@@ -10,6 +10,6 @@ class Profilehistory extends Model
 
     public static $rules = array(
       'profile_id' => 'required',
-      'sdited_at' => 'required',
+      'edited_at' => 'required',
     );
 }

@@ -79,9 +79,7 @@ class NewsController extends Controller
     $news->fill($news_form)->save();
 
     $history = new History;
-    \Debugbar::info($history);
     $history->news_id = $news->id;
-
     $history->edited_at = Carbon::now();
     $history->save();
 
