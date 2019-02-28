@@ -34,3 +34,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'NewsController@index');
+Route::post('/index', 'NewsController@index');
+
+Route::post('/human','NewsController@indexhuman');
+Route::post('/food','NewsController@indexfood');
+
+Route::get('profile', 'NewsController@profile');
+Route::post('/comment', 'CommentController@create');
+Route::get('/comment', 'CommentController@delete');
+
+
+Route::post('/posts/{post}/likes/create', 'LikesController@store');
+Route::post('/posts/{post}/likes/destroy/{like}', 'LikesController@destroy');

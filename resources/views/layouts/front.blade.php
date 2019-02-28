@@ -14,7 +14,7 @@
       <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
       <div id="app">
@@ -46,7 +46,8 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
+</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

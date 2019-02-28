@@ -24,7 +24,15 @@
              <input type="text" class="form-control" name="title" value="{{ old('title') }}">
             </div>
          </div>
-
+         <!-- カテゴリーを追加　検索の際にカテゴリーの値が必要 -->
+         <div class="form-group row">
+               <div class="col-md-10">
+                   <input type="radio" class="" name="category" value="芸能"><label>　芸能</label>
+                   <input type="radio" class="" name="category" value="食べ物"><label>　食べ物</label>
+                   <input type="radio" class="" name="category" value="その他"><label>　その他</label>
+               </div>
+         </div>
+</label>
          <div class="form-group row">
            <label class="col-md-2" for="body">本文</label>
             <div class="col-md-10">
@@ -35,11 +43,12 @@
          <div class="form-group row">
            <label class="col-md-2" for="title">画像</label>
              <div class="col-md-10">
-               <input type="file" class="form-control-file" name="image">
+               <input type="file" class="form-control-file" name="image_path">
              </div>
          </div>
          {{ csrf_field() }}
          <!-- submitは<form actionを実行する -->
+         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
          <input type="submit" class="btn btn-primary" value="更新">
 
        </form>

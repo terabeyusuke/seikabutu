@@ -16,9 +16,19 @@
 
               <div class="form-group row">
                  <label class="col-md-2" for="title">タイトル</label>
-                 <div class-"col-md-10">
+                 <div class="col-md-10">
                     <input type="text" class="form-control" name="title" value="{{ $news_form->title }}">
                  </div>
+
+                 <!-- カテゴリーを追加　検索の際にカテゴリーの値が必要 -->
+                 <div class="form-group row">
+                       <div class="col-md-10">
+                           <input type="radio" class="" name="category" value="芸能"><label>　芸能</label>
+                           <input type="radio" class="" name="category" value="食べ物"><label>　食べ物</label>
+                           <input type="radio" class="" name="category" value="その他"><label>　その他</label>
+                       </div>
+                 </div>
+
               </div>
               <div class="form-group row">
                  <label class="col-md-2" for="body">本文</label>
@@ -40,7 +50,7 @@
                    </div>
                 </div>
               </div>
-              
+
               <div class="form-group row">
                  <div class="col-md-10">
                     <input type="hidden" name="id" value="{{ $news_form->id }}">

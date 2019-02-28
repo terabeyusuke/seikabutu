@@ -23,18 +23,20 @@ class NewsController extends Controller
     $news = new News;
     $form = $request->all();
 
-    if (isset($form['image'])) {
-      $path = $request->file('image')->store('public/image');
+    if (isset($form['image_path'])) {
+      $path = $request->file('image_path')->store('public/image');
       $news->image_path = basename($path);
     } else {
       $news->image_path = null;
     }
 
     unset($form['_token']);
-    unset($form['_image']);
-    $news->fill($form);
-    $news->save();
+    unset($form['_image_path']);
 
+    $news->fill($form);
+    $news->category =$form["category"];
+    \Debugbar::info($news);
+    $news->save();
     return redirect('admin/news/create');
   }
 

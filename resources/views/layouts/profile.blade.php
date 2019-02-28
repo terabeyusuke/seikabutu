@@ -8,7 +8,7 @@
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <title>@yield('title')</title>
 
-      <script src="{{ asset('js/app.jp') }}" defer></script>
+      <script src="{{ asset('js/app.js') }}" defer></script>
 
       <link rel="dns-prefetch" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -41,9 +41,7 @@
                      {{ Auth::user()->name }} <span class="caret"></span>
                    </a>
                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclic="event.preventDefault();  document.getElementByID('logout-form').submit();">
-                    {{__('Logout')}}
-                  </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('Logout')}}</a>
 
                    <form id="logout-form" action="{{'logout' }}" method="POST" style="display: none;">
                     @csrf
